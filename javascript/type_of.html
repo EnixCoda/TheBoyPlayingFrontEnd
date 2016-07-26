@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>type of ?</title>
+</head>
+<body>
+
+</body>
+<script>
+  (function testTypeof() {
+    console.log("undefined: ", typeof undefined);
+    console.log("null: ", typeof null);
+    console.log("1: ", typeof 1);
+    console.log("[]: ", typeof []);
+    console.log("true: ", typeof true);
+    console.log("\"\": ", typeof "");
+    console.log("function: ", typeof function () {
+    });
+    console.log("regexp:", typeof new RegExp(/a/));
+  }());
+</script>
+</html>

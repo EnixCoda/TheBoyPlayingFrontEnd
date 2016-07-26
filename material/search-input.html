@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Input</title>
+  <style>
+    .search {
+      float: right;
+      position: relative;
+      vertical-align: bottom;
+      transition: all .3s linear;
+      margin: 2px 4px;
+    }
+
+    .search a img{
+      vertical-align: bottom;
+    }
+
+    .search div {
+      display: inline-block;
+    }
+
+    .search div input {
+      width: 0;
+      padding: 4px 0;
+      outline: none;
+      border-width: 0;
+      border-bottom: 1px solid #2196f3;
+      transition: all .5s ease;
+    }
+
+    .search:active input, .search:focus input{
+      width: 12em;
+    }
+
+    .search input:hover, .search input:focus {
+      width: 12em;
+    }
+
+    .search input ~ button {
+      display: none;
+      position: absolute;
+      bottom: 4px;
+      right: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .search input:focus ~ button{
+      display: block;
+    }
+
+    .search div span {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+
+    .search div span:before, .search div span:after {
+      content: '';
+      width: 0;
+      height: 1px;
+      position: absolute;
+      background: #1e88e3;
+      transition: all ease .5s;
+    }
+
+    .search div span:before {
+      left: 50%;
+    }
+
+    .search div span:after {
+      right: 50%;
+    }
+
+    .search input:focus ~ span:before, .search input:focus ~ span:after {
+      width: 50%;
+    }
+  </style>
+</head>
+<body>
+<div class="search">
+  <a href="javascript:;"><img src="../ic_search_black_24px.svg" alt="search icon"></a>
+  <div>
+    <input class="cls" type="text" required placeholder="Search">
+    <span></span>
+    <button>X</button>
+  </div>
+</div>
+<hr style="clear: right;">
+<div class="search">
+  <a href="javascript:;"><img src="../ic_search_black_24px.svg" alt="search icon"></a>
+  <div>
+    <input class="cls" type="search" required placeholder="Search">
+    <span></span>
+  </div>
+</div>
+</body>
+<script>
+</script>
+</html>

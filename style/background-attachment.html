@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background Attachment</title>
+  <style>
+    div {
+      width: 400px;
+      height: 350px;
+      margin: 50px;
+      border: 5px solid #dddddd;
+      background: url("../img/longBg.png");
+      text-align: right;
+      color: #a66;
+    }
+
+    .scroll {
+      background-attachment: scroll;
+    }
+
+    .fixed {
+      background-attachment: fixed;
+    }
+
+    .local {
+      background-attachment: local;
+    }
+  </style>
+</head>
+<body>
+<div class="scroll"></div>
+<div class="fixed"></div>
+<div class="local"></div>
+</body>
+</html>

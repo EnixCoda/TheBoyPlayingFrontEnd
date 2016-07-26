@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>play Javascript</title>
+</head>
+<body>
+
+</body>
+<script>
+  (function testIsArray() {
+    console.log("[] instance of Array: ", [] instanceof Array);
+    console.log("typeOf []: ", typeof []);
+    console.log("toString: ", Object.prototype.toString.call([]));
+    console.log("toString.slice(8, -1): ", Object.prototype.toString.call([]).slice(8, -1));
+  }());
+
+  (function testValueOf() {
+    function Proto() {}
+    var pro = new Proto();
+    console.log("typeof pro: ", typeof pro);
+    console.log("valueOf: ", pro.valueOf());
+    console.log("toString: ", pro.toString());
+    console.log("valueOf.toString: ", pro.valueOf().toString());
+    console.log("toString.valueOf: ", pro.toString().valueOf());
+    console.log("--------------");
+    console.log("1 + pro: ", 1 + pro);
+    pro.toString = function () {
+      return "called toString";
+    };
+    console.log("valueOf.toString: ", pro.valueOf().toString());
+    console.log("toString.valueOf: ", pro.toString().valueOf());
+    console.log("1 + pro: ", 1 + pro);
+    pro.valueOf = function () {
+      return "called valueOf";
+    };
+    console.log("valueOf.toString: ", pro.valueOf().toString());
+    console.log("toString.valueOf: ", pro.toString().valueOf());
+    console.log("1 + pro: ", 1 + pro);
+    console.log("-----------------");
+    console.log("conclusion: call valueOf before toString");
+  }());
+</script>
+</html>

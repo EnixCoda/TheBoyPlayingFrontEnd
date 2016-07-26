@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bind</title>
+</head>
+<body>
+
+</body>
+<script>
+  var name = "XL"; // window.name = "XL"
+  var person = {
+    name: "xl",
+    showName: function () {
+      console.log(this.name);
+    },
+    sayName: function () {
+      (function (callback) {
+        callback();
+      })(this.showName)
+    },
+    sayName2: function () {
+      return this.showName();
+    },
+    sayName3: function () {
+      var that = this;
+      (function (callback) {
+        callback();
+      })(that.showName);
+    }
+  };
+  console.log("protect this:");
+  person.sayName();   //输出 XL
+  person.sayName2();  //输出 xl
+  person.sayName3();  //输出 xl
+
+  // declare scope matters
+  var a = 1, b = "window";
+  function logA () {
+    console.log(a);
+  }
+  function Proto (b) {
+    var a = 0;
+    this.b = b;
+    this.call1 = function () {
+      console.log(a);
+    };
+    this.call2 = logA;
+    this.BInThis = function () {
+      console.log(this.b);
+    }
+  }
+  var proto = new Proto("proto");
+  console.log("declare scope matters:");
+  logA();               // 1
+  proto.call1();        // 0
+  proto.call2();        // 1
+
+  console.log("bind:");
+  proto.BInThis.call(); // window
+  proto.BInThis();      // proto
+  protoB = proto.BInThis.bind(proto);
+  protoB.call();        // proto
+  protoB();             // proto
+</script>
+</html>

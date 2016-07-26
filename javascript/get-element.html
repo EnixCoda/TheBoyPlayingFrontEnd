@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Element</title>
+</head>
+<body>
+<div class="c1 c2 c3">
+  c1 c2 c3
+  <div class="c1 c2 c3">
+    c1 c2 c3
+  </div>
+  <div class="c1 c3">
+    c1 c3
+  </div>
+  <div class="c1">
+    c1
+  </div>
+</div>
+<div class="c1 c2">
+  c1 c2
+</div>
+</body>
+<script>
+  function lookWithGetElements(root, className) {
+    document.write("find '" + className + " at " + root.toString() + "': " +
+        Array.prototype.slice.call(root.getElementsByClassName(className)).map(function (cur) {
+          return cur.className;
+        }).join(", ") + "<br>");
+  }
+
+  function lookWithQuery(root, className) {
+    document.write("find '" + className + " at " + root.toString() + "': " +
+        Array.prototype.slice.call(
+            root.querySelectorAll(
+                className.split(" ").map(
+                    function (cur) {
+                      return "." + cur
+                    }
+                ).join("")
+            )
+        ).map(
+            function (cur) {
+              return cur.className;
+            }
+        ).join(", ") + "<br>"
+    );
+  }
+
+  var firstDiv = document.getElementsByTagName("div")[0];
+
+  lookWithGetElements(document, "c1 c2 c3");
+  lookWithGetElements(document, "c1 c2");
+  lookWithGetElements(document, "c1 c3");
+  lookWithGetElements(document, "c1 c");
+
+  lookWithGetElements(firstDiv, "c1 c2");
+
+  lookWithQuery(document, "c1 c2");
+  lookWithQuery(firstDiv, "c1 c2");
+</script>
+</html>

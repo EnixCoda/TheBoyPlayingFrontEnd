@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>instance of ?</title>
+</head>
+<body>
+
+</body>
+<script>
+  (function testInstanceOf() {
+    function Proto() {
+      this.name = "proto";
+    }
+
+    var pro = new Proto();
+    console.log("pro instance of Proto? ", pro instanceof Proto);
+    pro.prototype = null; // owned by functions, used to build __proto__
+    console.log("pro instance of Proto? ", pro instanceof Proto);
+    pro.constructor = null;
+    console.log("pro instance of Proto? ", pro instanceof Proto);
+    pro.__proto__ = null; // __proto__ is used for check inherit chain
+    console.log("pro instance of Proto? ", pro instanceof Proto);
+  }());
+</script>
+</html>

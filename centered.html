@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Centered</title>
+  <style>
+    body > div {
+      margin: 16px;
+      background: #bbb;
+    }
+
+    body > div > div {
+      background: #faa;
+    }
+
+    body > div > div > div {
+      background: #afa;
+    }
+  </style>
+</head>
+<body>
+
+<div style="display: table;width: 300px;height: 200px;">
+  <div style="display: table-cell;vertical-align: middle;text-align: center">
+    <div style="display: inline-block;">inline</div>
+  </div>
+</div>
+
+<div style="width: 300px;height: 200px;position:relative;">
+  <div style="margin: auto;position: absolute;top: 0;left: 0;right: 0;bottom: 0;width: 100px;height: 100px;">
+    inline
+  </div>
+</div>
+
+<div style="width: 300px;height: 200px;position:relative;display: flex;">
+  <div style="display: inline-block;flex: 1;"></div>
+  <div style="display: flex;flex-direction: column">
+    <div style="flex: 1;"></div>
+    <p>centered content (even inline)</p>
+    <div style="flex: 1;"></div>
+  </div>
+  <div style="display: inline-block;flex: 1;"></div>
+</div>
+
+<div style="position: relative;height: 200px;">
+  <p style="margin: auto;text-align:center; line-height: 200px">
+    inline
+  </p>
+</div>
+
+<div style="position: relative;height: 200px;">
+  <div style="margin: auto;position: absolute;top: 0;bottom: 0;right: 0;width: 100px;height: 100px;">
+    inline
+  </div>
+</div>
+</body>
+</html>

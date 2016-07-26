@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Selectors</title>
+  <style>
+    /* universal selector */
+    * {
+
+    }
+
+    /* select id */
+    #id {
+
+    }
+
+    /* select class */
+    .class {
+
+    }
+
+    /* multiple conditions (AND) */
+    .class1.class2 {
+
+    }
+
+    /* multiple conditions (OR) */
+    .class1, .class2 {
+
+    }
+
+    /* select child */
+    /* direct child */
+    .parent>.child {
+
+    }
+    /* descendant */
+    .parent .child {
+
+    }
+
+    /* sibling */
+    /* the first sibling class2 after class1 */
+    .class1+.class2 {
+
+    }
+    /* all sibling class2 after class1 */
+    .class1~.class2 {
+
+    }
+
+    /* directive select with attribute attr defined */
+    select[attr] {
+
+    }
+
+    /* directive select with attribute attr defined exactly "cls" */
+    select[attr="cls"] {
+
+    }
+
+    /* directive select with attribute attr defined including "cls", split by space */
+    select[attr~="cls"] {
+
+    }
+
+    /* directive select with attribute attr defined start with "c" */
+    select[attr^="c"] {
+
+    }
+
+    /* directive select with attribute attr defined end with "c" */
+    select[attr$="c"] {
+
+    }
+
+    /* directive select with attribute attr defined including "c" */
+    select[attr*="c"] {
+
+    }
+
+  </style>
+</head>
+<body>
+
+</body>
+</html>

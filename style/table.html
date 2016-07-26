@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Table</title>
+  <style>
+    table {
+      /*border-collapse: collapse;*/
+      border-spacing: 8px 6px;
+    }
+
+    thead {
+      border-bottom: 4px solid rgba(0, 0, 0, 0.3);
+
+    }
+    th {
+      border-bottom: 4px solid rgba(0, 0, 0, 0.3);
+      font-size: 24px;
+      empty-cells: show;
+      text-align: center;
+      width: 100px;
+    }
+
+    td {
+      text-align: right;
+      empty-cells: hide;
+    }
+
+    td:first-child {
+      text-align: left;
+      font-size: 20px;
+      background: #fff;
+    }
+
+    tr:hover {
+      empty-cells: show;
+      background-color: #9cf;
+    }
+
+    td:hover {
+      background: #9fc;
+    }
+
+    tbody tr {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+<table>
+  <thead>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>1</td>
+    <td>Amy</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Georgie</td>
+    <td>12</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Mike</td>
+    <td>15</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td></td>
+    <td>15</td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

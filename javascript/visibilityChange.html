@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Visibility Change</title>
+</head>
+<body>
+
+</body>
+<script>
+  document.addEventListener("visibilitychange", function (e) {
+    if (document.hidden) document.title = "come back plz~";
+    else document.title = "go away!";
+  });
+</script>
+</html>

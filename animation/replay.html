@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Animation</title>
+  <style>
+    div {
+      width: 400px;
+      height: 300px;
+    }
+
+    .breathing {
+      animation: breath;
+      animation-duration: 1s;
+      animation-direction: alternate;
+      animation-iteration-count: 2;
+      animation-fill-mode: both;
+    }
+
+    @keyframes breath {
+      0% {
+        background: #0e0;
+      }
+      100% {
+        background: #090;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="breathing"></div>
+<button id="replay1">method 1</button>
+<button id="replay2">method 2</button>
+</body>
+<script>
+  document.querySelector("#replay1").addEventListener("click", function () {
+    var target = document.querySelector(".breathing");
+    var that = target.cloneNode(true);
+    this.parentNode.replaceChild(that, target);
+  });
+
+  document.querySelector("#replay2").addEventListener("click", function () {
+    var target = document.querySelector(".breathing");
+    target.classList.remove("breathing");
+    target.offsetWidth = target.offsetWidth; // magic way
+    target.classList.add("breathing");
+  });
+</script>
+</html>

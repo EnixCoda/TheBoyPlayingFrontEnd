@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Manipulate</title>
+</head>
+<body>
+<label for="nth"><input id="nth" type="text"></label>
+<button id="add">add</button>
+<button id="remove">remove</button>
+<div id="container"></div>
+</body>
+<script>
+  var container = document.querySelector("#container");
+  var btnAdd = document.querySelector("#add");
+  var btnRemove = document.querySelector("#remove");
+  var target = document.querySelector("#nth");
+  var count = 0;
+  btnAdd.addEventListener("click", function () {
+    var nth = parseInt(target.value) ? parseInt(target.value) : 0;
+    var newNode = document.createElement("div");
+    newNode.innerText = "" + count++;
+    var children = container.childNodes;
+    if (children.length === 0) container.appendChild(newNode);
+    else container.insertBefore(newNode, children[children.length <= nth ? children.length - 1 : nth].nextSibling);
+  });
+
+  btnRemove.addEventListener("click", function () {
+    var nth = parseInt(target.value) ? parseInt(target.value) : 0;
+    var children = container.childNodes;
+    if (children.length > 0) {
+      container.removeChild(children[children.length <= nth ? children.length - 1 : nth]);
+    }
+  });
+</script>
+</html>

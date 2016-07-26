@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Align</title>
+  <style>
+    form {
+      width: 240px;
+    }
+    .title {
+      display: inline-block;
+      width: 5em;
+      text-align: right;
+    }
+    .submit {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+<form action="">
+  <div>
+    <label class="title" for="name">name:
+    </label>
+    <input type="text" id="name" name="name">
+  </div>
+  <div>
+    <label class="title" for="age">age:
+    </label>
+    <input type="text" id="age" name="age">
+  </div>
+  <div>
+    <span class="title">gender:</span>
+    <label for="male"></label>
+    <input type="radio" id="male" name="gender" value="male">Male
+    <label for="female"></label>
+    <input type="radio" id="female" name="gender" value="female">Female
+  </div>
+  <div class="submit"><input type="submit"></div>
+</form>
+</body>
+</html>

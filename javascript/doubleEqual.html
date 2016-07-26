@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Double Equal</title>
+</head>
+<body>
+
+</body>
+<script>
+  var items = {
+    "0": 0,
+    "1": 1,
+    "\"\"": "",
+    "\"0\"": "0",
+    "\"1\"": "1",
+    "{}": {},
+    "[]": [],
+    "[0]": [0],
+    "['']": [''],
+    "['1']": ['1'],
+    "null": null,
+    "undefined": undefined,
+    "true": true,
+    "false": false
+  };
+  var spaces = "                   ";
+  var line = spaces.slice(-10);
+  for (var item in items) {
+    line += "  " + item;
+  }
+  console.info("%c"+line, "font-size:16px");
+
+  for (item in items) {
+    line = (spaces + item).slice(-10);
+    for (var item2 in items) {
+      line += "  " + (spaces + (items[item] == items[item2] ? "T" : "F")).slice(-item2.length);
+    }
+    console.info("%c"+line, "font-size:16px");
+  }
+
+  console.log("other:");
+  console.log("[1,2,3] == \"1,2,3\":", [1,2,3] == "1,2,3");
+</script>
+</html>

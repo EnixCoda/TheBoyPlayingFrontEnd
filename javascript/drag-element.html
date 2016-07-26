@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drag Element</title>
+</head>
+<body>
+
+</body>
+<script>
+  var followMouse = false;
+  var originalMousePos = {x: 0, y: 0};
+  var originalWindowPos = {x: 0, y: 0};
+  var myWindow = document.getElementsByClassName('window')[0];
+  myWindow.onmousemove = function (e) {
+    if (followMouse && e.buttons === 1 && e.button === 0) {
+      // move with mouse
+      console.log(e.x + " " + e.y);
+      myWindow.style.left = originalWindowPos.x + e.x - originalMousePos.x + "px";
+      myWindow.style.top = originalWindowPos.y + e.y - originalMousePos.y + "px";
+    }
+  };
+  myWindow.onmousedown = function (e) {
+    console.log("mouse pressed");
+    followMouse = true;
+    originalMousePos.x = e.x;
+    originalMousePos.y = e.y;
+    originalWindowPos.x = myWindow.offsetLeft;
+    originalWindowPos.y = myWindow.offsetTop;
+  };
+  myWindow.onmouseup = function () {
+    console.log("mouse released");
+    followMouse = false;
+  }
+
+</script>
+</html>

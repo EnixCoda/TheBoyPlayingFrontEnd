@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text</title>
+  <style>
+    @font-face {
+      font-family: "fontFamilyName";
+      src: url("//url/to/font.eot"),
+      url("//url/to/font.woff"),
+      url("//url/to/font.ttf"),
+      url("//url/to/font.otf"),
+      url("//url/to/font.svg");
+    }
+
+    p {
+      font-family: "fontFamilyName";
+      display: block;
+    }
+
+    p.first-letter:first-letter {
+      font-size: 200%;
+    }
+
+    p.first-line:first-line {
+      font-size: 200%;
+    }
+  </style>
+</head>
+<body>
+<p>font-stretch</p>
+<p style="font-stretch:condensed">condensed</p>
+<p style="font-stretch:normal">normal - default</p>
+<p style="font-stretch:expanded">expanded</p>
+
+<hr>
+<p>font-weight</p>
+<p style="font-weight: lighter;">lighter</p>
+<p style="font-weight: normal;">normal - default</p>
+<p style="font-weight: bold;">bold</p>
+<p style="font-weight: bolder;">bolder</p>
+
+<hr>
+<p>font-style</p>
+<p style="font-style: normal;">normal - default</p>
+<p style="font-style: italic;">italic</p>
+<p style="font-style: oblique;">oblique</p>
+
+<hr>
+<p>text-transform</p>
+<p>lowercase text + uppercase:</p>
+<p style="text-transform: uppercase;">lowercase text</p>
+<p>UPPERCASE TEXT + lowercase:</p>
+<p style="text-transform: lowercase;">UPPERCASE TEXT</p>
+<p>one apple a day, keep doctors away. + capitalize:</p>
+<p style="text-transform: capitalize;">one apple a day, keep doctors away.</p>
+
+<hr>
+<p>text-decoration</p>
+<p style="text-decoration: none;">none</p>
+<p style="text-decoration: underline;">underline</p>
+<p style="text-decoration: overline;">overline</p>
+<p style="text-decoration: line-through;">line-through</p>
+<p style="text-decoration: blink;">blink</p>
+
+<hr>
+<p>line-height</p>
+<p style="line-height: 1em">1em</p>
+<p style="line-height: 2em">2em</p>
+
+<hr>
+<p>line-weight</p>
+<p style="letter-spacing: -.5em">-.5em</p>
+<p style="letter-spacing: 0.1em">0.1em</p>
+<p style="letter-spacing: 0.5em">0.5em</p>
+<p style="letter-spacing: 1.0em">1.0em</p>
+
+<hr>
+<p>text-align</p>
+<p>left:</p>
+<p style="text-align: left">Flooding along the Yangtze River causes more than 180 deaths in central and eastern China.Five police officers are killed in Dallas, Texas, during a protest following the shootings of Alton Sterling and Philando Castile.The Chilcot Report into British participation in the Iraq War finds that peaceful alternatives were not exhausted, that intelligence was flawed, and that there was insufficient planning for its aftermath.The Juno spacecraft (pictured) achieves orbit around Jupiter for the start of a 20-month survey of the planet.</p>
+<p>right:</p>
+<p style="text-align: right">Flooding along the Yangtze River causes more than 180 deaths in central and eastern China.Five police officers are killed in Dallas, Texas, during a protest following the shootings of Alton Sterling and Philando Castile.The Chilcot Report into British participation in the Iraq War finds that peaceful alternatives were not exhausted, that intelligence was flawed, and that there was insufficient planning for its aftermath.The Juno spacecraft (pictured) achieves orbit around Jupiter for the start of a 20-month survey of the planet.</p>
+<p>center</p>
+<p style="text-align: center">Flooding along the Yangtze River causes more than 180 deaths in central and eastern China.Five police officers are killed in Dallas, Texas, during a protest following the shootings of Alton Sterling and Philando Castile.The Chilcot Report into British participation in the Iraq War finds that peaceful alternatives were not exhausted, that intelligence was flawed, and that there was insufficient planning for its aftermath.The Juno spacecraft (pictured) achieves orbit around Jupiter for the start of a 20-month survey of the planet.</p>
+<p>justify</p>
+<p style="text-align: justify">Flooding along the Yangtze River causes more than 180 deaths in central and eastern China.Five police officers are killed in Dallas, Texas, during a protest following the shootings of Alton Sterling and Philando Castile.The Chilcot Report into British participation in the Iraq War finds that peaceful alternatives were not exhausted, that intelligence was flawed, and that there was insufficient planning for its aftermath.The Juno spacecraft (pictured) achieves orbit around Jupiter for the start of a 20-month survey of the planet.</p>
+
+
+<hr>
+<p>text-indent</p>
+<p style="text-indent: -10px">some text indent -10px <br> but second line does not indent</p>
+
+<hr>
+<p>text-shadow</p>
+<p style="text-shadow: 0px 1px 1px #000">0px 1px 1px #000</p>
+<p style="text-shadow: 1px 0px 1px #000">1px 0px 1px #000</p>
+<p style="text-shadow: 1px 1px 0px #000">1px 1px 0px #000</p>
+<p style="text-shadow: 1px 1px 1px #000">1px 1px 1px #000</p>
+<p style="text-shadow: 2px 2px 1px #000">2px 2px 1px #000</p>
+<p style="text-shadow: 2px 2px 3px #000">2px 2px 3px #000</p>
+
+<hr>
+<p>first letter/first line</p>
+<p class="first-letter">first line <br> second line</p>
+<p class="first-line">first line <br> second line</p>
+</body>
+</html>

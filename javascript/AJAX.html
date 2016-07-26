@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX</title>
+</head>
+<body>
+
+</body>
+<script>
+  var xmlHttpRequest = new XMLHttpRequest();
+  // readyState = 0
+  var method = "post";
+  var url = "url";
+  var headers = [
+    {
+      key: "Content-Type",
+      value: "text/plain"
+    }
+  ];
+  var data = {
+    val: {}
+  };
+  // sequence: setRequestHeader >> open >> send
+  for (var header of headers) {
+    xmlHttpRequest.setRequestHeader(header.key, header.value);
+  }
+  xmlHttpRequest.overrideMimeType("text/plain");
+  xmlHttpRequest.open(method, url/*, false*/); // third para stands for async
+  // readyState = 1
+  xmlHttpRequest.send(data);
+  // readyState = 2
+  if (xmlHttpRequest.onprogress) {    // so as loadstart, [load, timeout, abort, error] >> final statuses
+    xmlHttpRequest.onprogress = function (event) {
+      // readyState = 3
+
+    }
+  }
+  xmlHttpRequest.onreadystatechange = function () {
+    if (xmlHttpRequest.status == 200 && xmlHttpRequest.readyState == 4) { //xhr.readyState = XMLHttpRequest.DONE
+      var headers = xmlHttpRequest.getAllResponseHeaders();
+      var contentType = xmlHttpRequest.getResponseHeader("Content-Type");
+      if (contentType == "application/json")
+        var jsonParsed = JSON.parse(xmlHttpRequest.responseText);
+      var responseXML = xmlHttpRequest.responseXML;
+    }
+  }
+</script>
+</html>

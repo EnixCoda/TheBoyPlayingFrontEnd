@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Input</title>
+</head>
+<body>
+<form action="target" method="post">
+  field set
+  <fieldset>
+    <legend>field title</legend>
+    text input
+    <input type="text" maxlength="10" pattern="/abc/">
+    <br>
+    number input
+    <input type="number" max="40" min="20" required="required">
+    <br>
+    password input
+    <input type="password" maxlength="20" required="anytext">
+    <br>
+  <textarea name="textArea" id="input_textarea" cols="30" rows="10">
+    pre-typed text (space filled)
+  </textarea>
+
+  </fieldset>
+
+  <hr>
+
+  email
+  <input type="email" name="email">
+  <br>
+
+  url
+  <input type="url" name="url">
+  <br>
+
+  search
+  <input type="search" name="search" placeholder="placeHolder">
+  <br>
+
+  date
+  <input type="date" name="pickingDate">
+  <br>
+
+  <hr>
+
+  radios
+  <input id="radios1" type="radio" name="radios" value="1"><label for="radios1">radio1</label>
+  <input id="radios2" type="radio" name="radios" value="2" checked="!false"><label for="radios2">radio2</label>
+  <label><input type="radio" name="radios" value="3">radio3</label>
+  <br>
+
+  <hr>
+
+  check boxes
+  <input type="checkbox" value="1">checkbox 1
+  <input type="checkbox" value="2" checked="!false">checkbox 2
+  <input type="checkbox" value="3" checked="checked">checkbox 3
+  <input type="checkbox" value="4" checked="anytext">checkbox 4
+  <br>
+
+  <hr>
+
+  single select
+  <select name="selecting" id="input_select">
+    <option value="1">option 1</option>
+    <option value="2" selected="!false">option 2</option>
+  </select>
+  <br>
+  <br>
+
+  multiple select (select multiple with Ctrl/Command pressed or drag mouse)
+  <br>
+  <select name="selecting_multiple" id="input_select_multiple" multiple="anytext">
+    <option value="1">option 1</option>
+    <option value="2" selected="!false">option 2</option>
+    <option value="3" selected="true">option 3</option>
+    <option value="4">option 4</option>
+    <option value="5">option 5</option>
+    <option value="6">option 6</option>
+    <option value="7">option 7</option>
+  </select>
+  <br>
+
+  <hr>
+
+  file
+  <input type="file" name="file" multiple="anytext">
+  <br>
+
+  <hr>
+  <input type="submit" name="submit" value="Submit">
+  <input type="reset" name="reset" value="Reset">
+  <br>
+
+  <button name="button"><img src="imgSrc" alt="imgAlt">some text</button>
+  <br>
+
+  <input type="image" src="imageSrc" width="100" height="100">
+
+</form>
+</body>
+</html>
