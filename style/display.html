@@ -5,41 +5,42 @@
   <title>Display</title>
 </head>
 <body>
+table:
+<div style="display: table;">
+  <div style="display: table-caption;">Caption</div>
+  <div style="display: table-header-group">long header group</div>
+  <div style="display: table-row-group;">
+    <div style="display: table-row">
+      <div style="display: table-cell;">row1 - col1</div>
+      <div style="display: table-cell;">row1 - col2</div>
+      <div style="display: table-cell;">row1 - col3</div>
+    </div>
+    <div style="display: table-row">
+      <div style="display: table-cell;">row2 - col1</div>
+      <div style="display: table-cell;">row2 - col2</div>
+      <div style="display: table-cell;">row2 - col3</div>
+    </div>
+  </div>
+  <div style="display: table-footer-group">footer group</div>
+</div>
+<hr>
+<div>
+  <div style="width: 100px;height: 100px;background: #fde;display: block;">block</div>
+  <div style="width: 100px;height: 100px;background: #efd;display: inline-block;">inline-block</div>
+  <div style="width: 100px;height: 100px;background: #def;display: inline">inline</div>
+</div>
+
+<div style="display: flex;">
+  <div style="display: inline-block;flex: 1">flex 1</div>
+  <div style="display: inline-block;flex: 2">flex 2</div>
+  <div style="display: inline-block;flex: 50%">flex 50%</div>
+</div>
+
 <div>
   <div>1</div>
   <div>2</div>
   <div style="display: list-item;">1</div>
   <div style="display: list-item;">2</div>
 </div>
-<div style="display: table;">
-  <div style="display: table-caption;">Caption</div>
-  <div style="display: table-header-group">long header group</div>
-  <div style="display: table-row-group;">
-    <div style="display: table-row">
-      <div style="display: table-cell;">col1</div>
-      <div style="display: table-cell;">col2</div>
-      <div style="display: table-cell;">col3</div>
-    </div>
-    <div style="display: table-row">
-      <div style="display: table-cell;">col1</div>
-      <div style="display: table-cell;">col2</div>
-      <div style="display: table-cell;">col3</div>
-    </div>
-  </div>
-  <div style="display: table-footer-group">footer group</div>
-</div>
-
-<div>
-  <div style="width: 400px;height: 200px;background: #fde;display: block;">1</div>
-  <div style="width: 400px;height: 200px;background: #fde;display: inline-block;">2</div>
-  <div style="width: 400px;height: 200px;background: #fde;display: inline">3</div>
-</div>
-
-<div style="display: flex;">
-  <div style="display: inline-block;flex: 1">0</div>
-  <div style="display: inline-block;flex: 1">1</div>
-  <div style="display: inline-block;flex: 1">2</div>
-</div>
-
 </body>
 </html>

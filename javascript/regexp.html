@@ -8,9 +8,13 @@
 
 </body>
 <script>
-  var testTarget = "AbcabcAB";
-  var reg = new RegExp(/abc/, "g");
-  reg.test(testTarget);
+  var testTarget = "AbcabcabcAB";
+  var reg = /abc/g; // new RegExp("/abc/", "g");
+  console.log(reg.test(testTarget));
+  console.log(reg.exec(testTarget));
+  console.log("well, reset lastIndex and do it again");
+  reg.lastIndex = 0;
+  console.log(reg.exec(testTarget));
 
 </script>
 </html>

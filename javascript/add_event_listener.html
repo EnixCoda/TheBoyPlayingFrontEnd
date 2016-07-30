@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Event Listener</title>
+</head>
+<body>
+click me, and catcher comes after listener
+<div>click me, and catcher comes before listener</div>
+</body>
+<script>
+  document.querySelector("body").addEventListener("click", function () {
+    alert("body: listened after beneath");
+  });
+  document.querySelector("body").addEventListener("click", function () {
+    alert("body: listened before beneath");
+  }, true);
+  document.querySelector("div").addEventListener("click", function () {
+    alert("div: listened after beneath");
+  });
+  document.querySelector("div").addEventListener("click", function () {
+    alert("div: listened before beneath");
+  }, true);
+</script>
+</html>

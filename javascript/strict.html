@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Call and Apply</title>
+</head>
+<body>
+
+</body>
+<script>
+
+</script>
+<script>
+  "use strict";
+  function g(arg0) {
+    console.log("arg0: " + arg0);
+    console.log("this:" + this);
+  }
+
+  function g_strict(that) {
+    "use strict";
+    console.log(that);
+    console.log(this);
+  }
+
+  console.log("not strict:");
+  g();
+  g.call(null, "1", "2");
+  g.apply(null, ["1", "2"]);
+
+  console.log("strict:");
+  g_strict();
+  g_strict.call(null, "1", "2");
+  g_strict.apply(null, ["1", "2"]);
+
+  console.log("instant strict:");
+  (function () {
+    "use strict"; // won't affect g
+    g();
+    g.call(null, "1", "2");
+    g.apply(null, ["1", "2"]);
+  })()
+</script>
+</html>

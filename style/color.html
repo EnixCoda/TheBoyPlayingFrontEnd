@@ -8,13 +8,19 @@
   .block {
     width: 200px;
     height: 200px;
+    margin: 6px;
+    text-align: right;
+    color: #ffffff;
+    display: inline-block;
   }
 </style>
 <body>
-  <div class="block" style="background: red;"></div>
-  <div class="block" style="background: #f00;"></div>
-  <div class="block" style="background: rgb(255,0,0);"></div>
-  <div class="block" style="background: rgba(255,0,0,0.5);"></div>
-  <div class="block"></div>
+<div class="block" style="background: red;">red</div>
+<div class="block" style="background: #f00;">#f00</div>
+<div class="block" style="background: rgb(255, 0, 0);">rgb(255, 0, 0)</div>
+<div class="block" style="background: rgba(255, 0, 0, 0.5);">rgb(255, 0, 0, 0.5)</div>
+<div class="block" style="background: hsl(0, 50%, 50%);">hsl(0, 50%, 50%)</div>
+<div class="block" style="background: hsla(0, 50%, 50%, .5);">hsl(0, 50%, 50%, .5)</div>
+<!--<div class="block"></div>&lt;!&ndash; TODO: why is messes layout &ndash;&gt;-->
 </body>
 </html>

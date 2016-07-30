@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inherit</title>
+</head>
+<body>
+</body>
+<script>
+  function Super() {
+    this.attrSetInConstructor = ["grand", "set in constructor"];
+    this.methodSetInConstructor = function () {
+      return ["grand", "set in constructor"];
+    };
+  }
+  Super.prototype.attrSetInPrototype = ["grand", "set in prototype"];
+  Super.prototype.methodSetInPrototype = function () {
+    return ["grand", "set in prototype"];
+  };
+
+  function Child() {
+    Super.call(this, arguments);
+
+    // method 1
+    this.prototype = new Super();
+
+    // method 2, not recommended
+    shallowCopy(this.prototype, Super.prototype);
+
+    // method 3
+    deepCopy(this.prototype, Super.prototype);
+  }
+  Child.prototype = Object.create(Super.prototype);
+  Child.prototype.constructor = Child;
+
+  function deepCopy(to, from) {
+    for (var i in from) {
+      if (typeof from[i] !== "object") to[i] = from[i];
+      else {
+        to[i] = from[i].constructor == Array ? [] : {};
+        deepCopy(to[i], from[i]);
+      }
+    }
+  }
+
+  function shallowCopy(to, from) {
+    for (var i in from) {
+      to[i] = from[i];
+    }
+  }
+</script>
+</html>

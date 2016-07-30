@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <title>Background</title>
   <style>
-    .oneline {
+    .one-line {
       width: 400px;
-      height: 300px;
-      background: #bbb url("../img/bg.jpg") repeat-x top center;
+      height: 240px;
+      background: #28f url("../img/bg.jpg") no-repeat top center;
+      background-size: contain;
       color: #fff;
     }
     .gradient {
@@ -18,14 +19,18 @@
     .gradient.linear{
       background: linear-gradient(#448888, #99ffcc);
     }
+    .gradient.linear.reverse{
+      background: linear-gradient(0deg, #448888, #99ffcc);
+    }
     .gradient.radial{
-      background: radial-gradient(#448888, #99ffcc);
+      background: radial-gradient(#448888, #99ffcc, #aaff88);
     }
   </style>
 </head>
 <body>
-<div class="oneline">background in one line</div>
+<div class="one-line">background in one line</div>
 <div class="gradient linear">background color gradient - linear</div>
+<div class="gradient linear reverse">background color gradient - linear - reverse</div>
 <div class="gradient radial">background color gradient - radial</div>
 </body>
 </html>

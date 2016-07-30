@@ -60,7 +60,10 @@
   proto.BInThis.call(); // window
   proto.BInThis();      // proto
   protoB = proto.BInThis.bind(proto);
+  protoC = protoB.bind({});
   protoB.call();        // proto
   protoB();             // proto
+  protoC.call();        // proto, so we cannot bind twice
+  protoC();             // proto
 </script>
 </html>

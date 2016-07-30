@@ -8,12 +8,16 @@
 <label for="nth"><input id="nth" type="text"></label>
 <button id="add">add</button>
 <button id="remove">remove</button>
+<button id="replace">replace</button>
 <div id="container"></div>
 </body>
 <script>
+  var savedElement; // won't be null when the element was removed from document
+  var copyOfNodeList = document.querySelector("#container").childNodes; // bind to document
   var container = document.querySelector("#container");
   var btnAdd = document.querySelector("#add");
   var btnRemove = document.querySelector("#remove");
+  var btnReplace = document.querySelector("#replace");
   var target = document.querySelector("#nth");
   var count = 0;
   btnAdd.addEventListener("click", function () {
@@ -29,7 +33,23 @@
     var nth = parseInt(target.value) ? parseInt(target.value) : 0;
     var children = container.childNodes;
     if (children.length > 0) {
+      savedElement = children[children.length <= nth ? children.length - 1 : nth];
       container.removeChild(children[children.length <= nth ? children.length - 1 : nth]);
+    }
+  });
+
+  document.addEventListener("click", function () {
+    console.log(savedElement);
+    console.log(copyOfNodeList);
+  });
+
+  btnReplace.addEventListener("click", function () {
+    var nth = parseInt(target.value) ? parseInt(target.value) : 0;
+    var children = container.childNodes;
+    var newNode = document.createElement("div");
+    newNode.innerHTML = count++;
+    if (children.length > 0) {
+      container.replaceChild(newNode, children[children.length <= nth ? children.length - 1 : nth]);
     }
   });
 </script>

@@ -6,14 +6,20 @@
   <style>
     form {
       width: 240px;
+      box-sizing: border-box;
+      padding-right: 60px;
     }
-    .title {
+    form div label:first-child {
       display: inline-block;
-      width: 5em;
+      width: 60px;
       text-align: right;
     }
-    .submit {
-      text-align: right;
+    input[type=text] {
+      width: 160px;
+    }
+    input[type=submit] {
+      width: auto;
+      float: right;
     }
   </style>
 </head>
@@ -30,13 +36,13 @@
     <input type="text" id="age" name="age">
   </div>
   <div>
-    <span class="title">gender:</span>
+    <label class="title">gender:</label>
     <label for="male"></label>
     <input type="radio" id="male" name="gender" value="male">Male
     <label for="female"></label>
     <input type="radio" id="female" name="gender" value="female">Female
   </div>
-  <div class="submit"><input type="submit"></div>
+  <input type="submit">
 </form>
 </body>
 </html>

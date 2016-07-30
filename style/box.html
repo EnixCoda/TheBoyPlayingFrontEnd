@@ -8,14 +8,7 @@
       display: inline-block;
     }
 
-    .border-type > div {
-      width: 150px;
-      height: 40px;
-      margin: 6px;
-      padding: 2px;
-    }
-
-    .box-sizing div {
+    .box-sizing div, .box-shadow div {
       width: 150px;
       height: 40px;
       background: #faa;
@@ -28,63 +21,37 @@
 <body>
 <div style="
       width: 150px;
-      height: 40px;
+      height: 200px;
       background: #488;
       margin: 4px 3px 2px 1px;
       border-width: 1px 2px 3px 4px;
       border-style: solid;
       padding: 1px 2px 3px 4px;">
-  width,height,background
-  margin,padding,border
+  width: 150px; <br>
+  height: 200px; <br>
+  background: #488; <br>
+  margin: 4px 3px 2px 1px; <br>
+  border-width: 1px 2px 3px 4px; <br>
+  border-style: solid; <br>
+  padding: 1px 2px 3px 4px; <br>
 </div>
 
 <hr>
 <div class="box-sizing">
+  <div style="">default - content box</div>
   <div style="box-sizing: border-box">border box</div>
   <div style="box-sizing: content-box">content box</div>
 </div>
 
 <hr>
-border-type
-<div class="border-type">
-  <div style="border-style: solid">solid</div>
-  <div style="border-style: dashed">dashed</div>
-  <div style="border-style: dotted">dotted</div>
-  <div style="border-style: double">double</div>
-  <div style="border-style: groove">groove</div>
-  <div style="border-style: ridge">ridge</div>
-  <div style="border-style: outset">outset</div>
-  <div style="border-style: inset">inset</div>
-</div>
-
-<hr>
-border-color
-<div class="border-type">
-  <div style="border-style: solid; border-color: #000 #666 #bbb #eee">border colors</div>
-</div>
-
-<hr>
-border-image
-<div class="border-type">
-  <div style="border-image: url('//url/to/image')">border image</div>
-</div>
-
-<hr>
-box-shadow
-<div class="border-type">
-  <div style="box-shadow: 0px 1px 1px 0px">0px 1px 1px 0px</div>
-  <div style="box-shadow: 1px 0px 1px 0px">1px 0px 1px 0px</div>
-  <div style="box-shadow: 1px 1px 0px 0px">1px 1px 0px 0px</div>
-  <div style="box-shadow: 1px 1px 1px 0px">1px 1px 1px 0px</div>
+<span>box-shadow</span> <br>
+<div class="box-shadow">
+  <div style="box-shadow: 4px 0px 0px 0px">4px 0px 0px 0px</div>
+  <div style="box-shadow: 0px 4px 0px 0px">0px 4px 0px 0px</div>
+  <div style="box-shadow: 0px 0px 4px 0px">0px 0px 4px 0px</div>
+  <div style="box-shadow: 0px 0px 0px 4px">0px 0px 0px 4px</div>
   <div style="box-shadow: 1px 1px 1px 1px">1px 1px 1px 1px</div>
 </div>
-
 <hr>
-border-radius
-<div class="border-type">
-  <div style="border-style: solid; border-radius: 1px 2px 4px 8px">1,2,4,8px</div>
-  <div style="border-style: solid; border-radius: 16px / 8px">16/8px</div>
-  <div style="border-style: solid; border-radius: 16px 4px / 8px">16/8px</div>
-</div>
 </body>
 </html>

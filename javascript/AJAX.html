@@ -37,7 +37,13 @@
     }
   }
   xmlHttpRequest.onreadystatechange = function () {
-    if (xmlHttpRequest.status == 200 && xmlHttpRequest.readyState == 4) { //xhr.readyState = XMLHttpRequest.DONE
+    if (xmlHttpRequest.status == 200 && xmlHttpRequest.readyState == 4) {
+      //XMLHttpRequest.readyState:
+      // 0: XMLHttpRequest.UNSENT
+      // 1: XMLHttpRequest.OPENED
+      // 2: XMLHttpRequest.HEADERS_RECEIVED
+      // 3: XMLHttpRequest.LOADING
+      // 4: XMLHttpRequest.DONE
       var headers = xmlHttpRequest.getAllResponseHeaders();
       var contentType = xmlHttpRequest.getResponseHeader("Content-Type");
       if (contentType == "application/json")

@@ -13,15 +13,14 @@
     <input type="text" maxlength="10" pattern="/abc/">
     <br>
     number input
-    <input type="number" max="40" min="20" required="required">
+    <input type="number" max="40" min="20" required="false"> <!--required's content could be any text or empty-->
     <br>
     password input
-    <input type="password" maxlength="20" required="anytext">
+    <input type="password" maxlength="20" required>
     <br>
-  <textarea name="textArea" id="input_textarea" cols="30" rows="10">
-    pre-typed text (space filled)
-  </textarea>
-
+    <textarea name="textArea" id="input_textarea" cols="30" rows="10">
+      pre-typed text (space filled)
+    </textarea>
   </fieldset>
 
   <hr>
@@ -46,7 +45,7 @@
 
   radios
   <input id="radios1" type="radio" name="radios" value="1"><label for="radios1">radio1</label>
-  <input id="radios2" type="radio" name="radios" value="2" checked="!false"><label for="radios2">radio2</label>
+  <input id="radios2" type="radio" name="radios" value="2" checked><label for="radios2">radio2</label>
   <label><input type="radio" name="radios" value="3">radio3</label>
   <br>
 
@@ -54,9 +53,8 @@
 
   check boxes
   <input type="checkbox" value="1">checkbox 1
-  <input type="checkbox" value="2" checked="!false">checkbox 2
+  <input type="checkbox" value="2" checked>checkbox 2
   <input type="checkbox" value="3" checked="checked">checkbox 3
-  <input type="checkbox" value="4" checked="anytext">checkbox 4
   <br>
 
   <hr>
@@ -64,7 +62,8 @@
   single select
   <select name="selecting" id="input_select">
     <option value="1">option 1</option>
-    <option value="2" selected="!false">option 2</option>
+    <option value="2" selected>option 2</option>
+    <option value="3" selected>option 3</option> <!-- this will be selected-->
   </select>
   <br>
   <br>
@@ -73,8 +72,8 @@
   <br>
   <select name="selecting_multiple" id="input_select_multiple" multiple="anytext">
     <option value="1">option 1</option>
-    <option value="2" selected="!false">option 2</option>
-    <option value="3" selected="true">option 3</option>
+    <option value="2" selected>option 2</option>
+    <option value="3" selected>option 3</option>
     <option value="4">option 4</option>
     <option value="5">option 5</option>
     <option value="6">option 6</option>
@@ -85,7 +84,7 @@
   <hr>
 
   file
-  <input type="file" name="file" multiple="anytext">
+  <input type="file" name="file" multiple>
   <br>
 
   <hr>
@@ -93,11 +92,20 @@
   <input type="reset" name="reset" value="Reset">
   <br>
 
-  <button name="button"><img src="imgSrc" alt="imgAlt">some text</button>
+  <button name="button"><img src="imageSrc" alt="imgAlt">some text</button>
   <br>
 
   <input type="image" src="imageSrc" width="100" height="100">
 
 </form>
 </body>
+<script>
+  document.querySelector("[type='password']").addEventListener("input", function (e) {
+    return;
+  });
+
+  document.querySelector("[type='password']").addEventListener("change", function (e) {
+    return;
+  });
+</script>
 </html>
